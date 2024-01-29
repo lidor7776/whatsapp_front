@@ -44,24 +44,27 @@ export const userSlice = createSlice({
         token: "",
       };
     },
+    changeStatus: (state, action) => {
+      state.status = action.payload;
+    },
   },
   extraReducers(builder) {
-    builder.addCase(registerUser.pending, (state, action) => {
-      state.status="loading";
-    })
-    .addCase(registerUser.fulfilled,(state,action)=>{
-      state.status="succeeded";
-      state.error="";
-      state.user=action.payload.user;
-    })
-    .addCase(registerUser.rejected,(state,action)=>{
-      state.status="failed"
-      state.error=action.payload;
-    })
-    ;
+    builder
+      .addCase(registerUser.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(registerUser.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.error = "";
+        state.user = action.payload.user;
+      })
+      .addCase(registerUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.payload;
+      });
   },
 });
 
-export const { logout } = userSlice.actions;
+export const { logout,changeStatus } = userSlice.actions;
 
 export default userSlice.reducer;

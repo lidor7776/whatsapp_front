@@ -1,6 +1,6 @@
 export default function LoginForm() {
   return (
-    <div className="h-screen w-full flex item-center justify-center overflow-hidden">
+    <div className="h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Container*/}
       <div className="max-w-md space-y-8 p-10 dark:bg-dark_bg_2 rounded-xl">
         {/*Heading */}
