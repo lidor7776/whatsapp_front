@@ -1,9 +1,13 @@
-import React from 'react'
+import { Sidebar } from "../components/sidebar";
 
-function Home() {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="min-h-screen dark:bg-dark_bg_1 flex items-center justify-center py-[19px] overflow-hidden">
+      {/*Container */}
+      <div className="container min-h-screen flex">
+        {/*Sidebar */}
+        <Sidebar />
+      </div>
+    </div>
+  );
 }
-
-export default Home
